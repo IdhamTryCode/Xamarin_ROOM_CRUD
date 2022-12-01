@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ruang.Page1">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listview_ruang" HasUnevenRows="True" ItemsSource="{Binding ruangans}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="30"></ColumnDefinition>
+                                        <ColumnDefinition Width="30"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding nama_ruang}" Grid.Column="0" Grid.Row="0" FontSize="Subtitle" FontAttributes="Bold" BackgroundColor="Black" TextColor="White"></Label>
+                                    <Label Text="{Binding kapasitas}" Margin="10,0" Grid.Column="0" Grid.Row="1" ></Label>
+                                    <ImageButton Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Source="edit.png" WidthRequest="20" CommandParameter="{Binding nama_ruang}" BackgroundColor="Transparent" Clicked="ImageButton_Clicked"></ImageButton>
+                                    <ImageButton Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" Source="delete.png" WidthRequest="20" CommandParameter="{Binding nama_ruang}" BackgroundColor="Transparent" x:Name="delete" Clicked="delete_Clicked" ></ImageButton>
+                                </Grid>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Tambah Data Ruang" Font="Large" FontAttributes="Bold" BackgroundColor="Gold" x:Name="view" Clicked="view_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

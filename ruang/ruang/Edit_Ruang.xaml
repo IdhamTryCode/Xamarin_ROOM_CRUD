@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ruang.Edit_Ruang">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Label Text="Nama Ruangan: " FontSize="Medium"></Label>
+            <Entry Placeholder="masukan nama ruangan" TextColor="Black" FontAttributes="Bold" ClearButtonVisibility="WhileEditing" x:Name="t_ruang"/>
+
+            <Label Text="Kapasitas: " FontSize="Medium"></Label>
+            <Entry x:Name="t_kapasitas" TextColor="Black" FontAttributes="Bold" ClearButtonVisibility="WhileEditing" Keyboard="Numeric"/>
+
+            <Button Text="Update" CornerRadius="15" Font="Large" FontAttributes="Bold" BackgroundColor="Gold" x:Name="b_update" Clicked="b_update_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
